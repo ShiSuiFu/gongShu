@@ -1,0 +1,208 @@
+//
+//  MyAlertView.m
+//  daShu
+//
+//  Created by 史岁富 on 15/11/4.
+//  Copyright © 2015年 史岁富. All rights reserved.
+//
+
+#import "MyAlertView.h"
+#import "AppDelegate.h"
+#define view_Width self.bounds.size.width
+#define view_Height self.bounds.size.height
+#define ALERT_View_Width (kMainScreenWidth==320?270.f:290.f)
+@interface MyAlertView ()
+@property (nonatomic,strong) UIView *alertView;
+//@property (nonatomic,strong) MyAlertView *alert;
+
+@end
+@implementation MyAlertView
+
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitle:(NSString *)otherButtonTitle{
+
+    UIWindow *window = ((AppDelegate *)[UIApplication sharedApplication].delegate).window;
+    
+    self = [super initWithFrame:window.bounds];
+    if (self) {
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.bounds];
+        imageView.backgroundColor = [UIColor blackColor];
+        imageView.alpha = 0.4;
+        [self addSubview:imageView];
+        self.title = title;
+        self.message = message;
+        self.delegate = delegate;
+        self.cancelButtonTitle = cancelButtonTitle;
+        self.otherButtonTitle = otherButtonTitle;
+        [self creatAlertView];
+        
+        if (otherButtonTitle) {
+            self.otherButton.tag = 1;
+        }else{
+
+        }
+        if (cancelButtonTitle) {
+            self.cancelButton.tag = 0;
+        }else{
+            self.otherButton.tag = 0;
+        }
+        
+        
+    }
+    return self;
+    
+}
+
+- (void)creatAlertView{
+    _alertView = [[UIView alloc]initWithFrame:CGRectMake(25,  view_Height/2 - 160, ALERT_View_Width, 200)];
+    _alertView.center = CGPointMake(self.center.x, _alertView.center.y);
+    _alertView.layer.cornerRadius = 4;
+    _alertView.backgroundColor = [UIColor whiteColor];
+    [self addSubview:_alertView];
+    CGFloat height = [self heightForText:self.message withWidth:_alertView.frameWidth - 15*2 WithFont:15];
+    if (height <50) {
+        height = 50;
+    }
+    _alertView.frameHeight = 50 + 15 + 45 + 10*2 + height;
+    _alertView.frameY = self.bounds.size.height/2 - _alertView.frameHeight/2;
+    
+    [_alertView addSubview:self.titleLabel];
+    [_alertView addSubview:self.msgLabel];
+    if (self.cancelButtonTitle) {
+        [_alertView addSubview:self.cancelButton];
+    }
+    if (_otherButtonTitle) {
+        [_alertView addSubview:self.otherButton];
+    }
+
+}
+- (void)setTitle:(NSString *)title{
+    _title = title;
+    self.titleLabel.text = title;
+}
+- (void)setCancelButtonTitle:(NSString *)cancelButtonTitle      {
+    _cancelButtonTitle = cancelButtonTitle;
+    [self.cancelButton setTitle:cancelButtonTitle forState:UIControlStateNormal];
+}
+- (void)setOtherButtonTitle:(NSString *)otherButtonTitle{
+    _otherButtonTitle = otherButtonTitle;
+    [self.otherButton setTitle:otherButtonTitle forState:UIControlStateNormal];
+}
+- (UILabel *)titleLabel{
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, ALERT_View_Width, 50)];
+        _titleLabel.textColor = [UIColor whiteColor];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:17];
+        _titleLabel.backgroundColor = [UIColor colorWithRed:50/225.f green:183/225.f blue:125/225.f alpha:1];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.adjustsFontSizeToFitWidth = YES;
+        UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:_titleLabel.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(4, 4)];
+        CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+        maskLayer.frame = _titleLabel.bounds;
+        maskLayer.path = maskPath.CGPath;
+        _titleLabel.layer.mask = maskLayer;
+    }
+
+    return _titleLabel;
+}
+
+- (void)setMessage:(NSString *)message{
+    _message = message;
+    self.msgLabel.text = message;
+}
+- (UILabel *)msgLabel{
+    if (!_msgLabel) {
+        _msgLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 60, ALERT_View_Width - 2*15, 50)];
+        _msgLabel.textColor = [UIColor blackColor];
+        _msgLabel.font = [UIFont systemFontOfSize:15];
+        _msgLabel.textAlignment = NSTextAlignmentCenter;
+        _msgLabel.adjustsFontSizeToFitWidth = YES;
+        _msgLabel.numberOfLines = 0;
+//        _msgLabel.backgroundColor = [UIColor redColor];
+    }
+    CGFloat height = [self heightForText:self.message withWidth:_alertView.frameWidth - 15*2 WithFont:15];
+    if (height <50) {
+        height = 50;
+    }
+    _msgLabel.frameHeight = height;
+    return _msgLabel;
+}
+- (UIButton *)cancelButton{
+    if (!_cancelButton) {
+        _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_cancelButton setBackgroundColor:[UIColor colorWithHexString:@"#8A8A8A"]];
+        [_cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _cancelButton.layer.cornerRadius = 4;
+        _cancelButton.layer.masksToBounds = YES;
+        [_cancelButton addTarget:self action:@selector(cancelButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    if (self.otherButtonTitle) {
+        _cancelButton.frame = CGRectMake(15, self.alertView.frameHeight - 10 - 45, (ALERT_View_Width - 2*15 - 10)/2.f, 45);
+
+    }else{
+        _cancelButton.frame = CGRectMake(15, self.alertView.frameHeight - 10 - 45, ALERT_View_Width - 2*15, 45);
+
+    }
+
+    return _cancelButton;
+}
+- (UIButton *)otherButton{
+    if (!_otherButton) {
+        _otherButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_otherButton setBackgroundColor:[UIColor colorWithHexString:@"#FF7247"]];
+        [_otherButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _otherButton.layer.cornerRadius = 4;
+        _otherButton.layer.masksToBounds = YES;
+        [_otherButton addTarget:self action:@selector(otherButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    if (self.cancelButtonTitle) {
+        _otherButton.frame = CGRectMake(ALERT_View_Width-15-(ALERT_View_Width - 2*15 - 10)/2.f, self.alertView.frameHeight - 10 - 45, (ALERT_View_Width - 2*15 - 10)/2.f, 45);
+    }else{
+        _otherButton.frame = CGRectMake(15, self.alertView.frameHeight - 10 - 45, ALERT_View_Width - 2*15, 45);
+    }
+
+    return _otherButton;
+}
+- (void)show{
+    UIWindow *window = ((AppDelegate *)[UIApplication sharedApplication].delegate).window;
+    [window addSubview:self];
+}
+- (CGFloat)heightForText:(NSString *)text withWidth:(CGFloat)width WithFont:(CGFloat)font
+
+{
+    NSMutableParagraphStyle* paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+    
+    paragraphStyle.lineBreakMode=NSLineBreakByWordWrapping;
+    
+    NSDictionary* attributes =@{NSFontAttributeName:[UIFont systemFontOfSize:font],NSParagraphStyleAttributeName:paragraphStyle.copy};
+    
+    return [text boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:(NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin) attributes:attributes context:nil].size.height;
+    
+}
+
+- (void)cancelButtonClick:(UIButton *)button{
+    [self respondsDelegate:button.tag];
+
+}
+- (void)otherButtonClick:(UIButton *)button{
+    [self respondsDelegate:button.tag];
+}
+- (void)respondsDelegate:(NSInteger)index{
+    if (_delegate && [_delegate respondsToSelector:@selector(myAlertView:clickedButtonAtIndex:)]) {
+        [self.delegate myAlertView:self clickedButtonAtIndex:index];
+    }
+    [UIView animateWithDuration:0.2 animations:^{
+        self.alpha = 0.3;
+    } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+    }];
+}
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+}
+*/
+
+@end

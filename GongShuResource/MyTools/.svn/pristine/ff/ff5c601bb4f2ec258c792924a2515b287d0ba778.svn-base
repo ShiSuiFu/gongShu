@@ -1,0 +1,14 @@
+//
+//  UIColor+zjdd.h
+//  daShu
+//
+//  Created by 付朋华 on 15/11/3.
+//  Copyright © 2015年 付朋华. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface UIColor (zjdd)
++(UIColor *)colorWithHexString:(NSString *)color;
+
+@end

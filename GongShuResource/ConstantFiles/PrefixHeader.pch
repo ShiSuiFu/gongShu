@@ -1,0 +1,50 @@
+//
+//  PrefixHeader.pch
+//  doctor
+//
+//  Created by yanjing on 15/7/31.
+//  Copyright (c) 2015年 fupenghua. All rights reserved.
+//
+
+#ifndef doctor_PrefixHeader_pch
+#define doctor_PrefixHeader_pch
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "AppDelegate.h"
+#import "Constant_URL.h"
+#import "JSONKit.h"
+#import "UIView+convenience.h"
+#import "NSString+additional.h"
+#import "UIColor+zjdd.h"
+#import "HBUserDefaults.h"
+#import "GlobalUtil.h"
+#import "MobClick.h"
+#import "ReactiveCocoa.h"
+#import "UIView+convenience.h"
+#import "NSString+additional.h"
+
+
+#define NotNil(v) ((v)?(v):(@""))
+#define UMENG_APPKEY @"564bef9467e58e0466001763"
+#define IS_IOS8 ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 8.0? YES : NO) //判断是否为IOS8的系统
+
+#define IS_IOS7 ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 7.0? YES : NO) //判断是否为IOS7的系统
+
+#define IS_IOS6 ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 6.0? YES : NO)//判断是否为IOS6的系统
+#define IS_IOS5 ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 5.0? YES : NO)//判断是否为IOS5的系统
+#define NOTNULL(object)  ![object isKindOfClass:[NSNull class]]&&object!=nil
+#define kMainScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kMainScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define RGBColor(R,G,B) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1.0]
+
+#ifdef __OPTIMIZE__
+# define NSLog(...) {}
+#else
+# define NSLog(...) NSLog(__VA_ARGS__)
+#endif
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#endif

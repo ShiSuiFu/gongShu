@@ -2,11 +2,13 @@
 //  AppDelegate.m
 //  gongShu
 //
-//  Created by 付朋华 on 15/11/18.
-//  Copyright © 2015年 付朋华. All rights reserved.
+//  Created by 史岁富 on 15/11/18.
+//  Copyright © 2015年 史岁富. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "MyTabBarViewController.h"
+#import "LSNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -14,10 +16,19 @@
 
 @implementation AppDelegate
 
-
+- (void)umengTrack {
+    
+    [MobClick startWithAppkey:UMENG_APPKEY reportPolicy:(ReportPolicy)REALTIME channelId:nil];
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//    [self umengTrack];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [[MyTabBarViewController alloc]init];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     // Override point for customization after application launch.
     return YES;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

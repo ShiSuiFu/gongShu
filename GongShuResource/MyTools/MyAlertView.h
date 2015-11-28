@@ -1,0 +1,29 @@
+//
+//  MyAlertView.h
+//  daShu
+//
+//  Created by 史岁富 on 15/11/4.
+//  Copyright © 2015年 史岁富. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+@class MyAlertView;
+@protocol MyAlertViewDelegate <NSObject>
+- (void)myAlertView:(MyAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
+@end
+@interface MyAlertView : UIView
+- (MyAlertView *)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitle:(NSString *)otherButtonTitle;
+@property (nonatomic,weak) id delegate;
+@property (nonatomic,strong) UILabel *titleLabel;
+@property (nonatomic,strong) NSString *title;
+
+@property (nonatomic,strong) UILabel *msgLabel;
+@property (nonatomic,strong) NSString *message;
+@property (nonatomic,strong) UIButton *cancelButton;
+@property (nonatomic,strong) NSString *cancelButtonTitle;
+@property (nonatomic,strong) UIButton *otherButton;
+@property (nonatomic,strong) NSString *otherButtonTitle;
+
+
+- (void)show;
+@end
