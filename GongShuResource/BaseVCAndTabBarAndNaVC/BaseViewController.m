@@ -56,7 +56,7 @@
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     if (self != [self.navigationController.viewControllers objectAtIndex:0])
     {
-        [self setLeftButton:[UIImage imageNamed:@"back"] width:18/2 height:30/2 title:@"" target:self action:@selector(back)];
+        [self setLeftButton:[UIImage imageNamed:@"back"] width:18/2 height:30/2 title:@"返回" target:self action:@selector(back)];
     }
     [self resetViewFrame];
 

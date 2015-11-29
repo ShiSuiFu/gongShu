@@ -188,6 +188,8 @@
 		69DAD3451C0881200079319C /* AddLogisticsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69DAD3431C0881200079319C /* AddLogisticsCell.xib */; };
 		69DAD34C1C08862E0079319C /* ReleaseCommodityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DAD34A1C08862E0079319C /* ReleaseCommodityViewController.m */; };
 		69DAD34D1C08862E0079319C /* ReleaseCommodityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69DAD34B1C08862E0079319C /* ReleaseCommodityViewController.xib */; };
+		69EEFEAE1C0B00AC002BA29A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EEFEAC1C0B00AC002BA29A /* LoginViewController.m */; };
+		69EEFEAF1C0B00AC002BA29A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69EEFEAD1C0B00AC002BA29A /* LoginViewController.xib */; };
 		69EF0A631C096E0400099183 /* BatchAlterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EF0A611C096E0400099183 /* BatchAlterViewController.m */; };
 		69EF0A641C096E0400099183 /* BatchAlterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69EF0A621C096E0400099183 /* BatchAlterViewController.xib */; };
 		69EF0A681C09710900099183 /* BatchViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EF0A661C09710900099183 /* BatchViewCell.m */; };
@@ -545,6 +547,9 @@
 		69DAD3491C08862E0079319C /* ReleaseCommodityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleaseCommodityViewController.h; sourceTree = "<group>"; };
 		69DAD34A1C08862E0079319C /* ReleaseCommodityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReleaseCommodityViewController.m; sourceTree = "<group>"; };
 		69DAD34B1C08862E0079319C /* ReleaseCommodityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReleaseCommodityViewController.xib; sourceTree = "<group>"; };
+		69EEFEAB1C0B00AC002BA29A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		69EEFEAC1C0B00AC002BA29A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		69EEFEAD1C0B00AC002BA29A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		69EF0A601C096E0400099183 /* BatchAlterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatchAlterViewController.h; sourceTree = "<group>"; };
 		69EF0A611C096E0400099183 /* BatchAlterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatchAlterViewController.m; sourceTree = "<group>"; };
 		69EF0A621C096E0400099183 /* BatchAlterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BatchAlterViewController.xib; sourceTree = "<group>"; };
@@ -1112,6 +1117,7 @@
 		0466F4B91BFC1F14004CAFC1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				69EEFEAA1C0B00AC002BA29A /* LoginAndRegiest */,
 				045B99751BFC4F11003D6B96 /* Modle */,
 				0466F4BD1BFC20A7004CAFC1 /* MyInfoVC */,
 				0466F4BC1BFC2095004CAFC1 /* MessageVC */,
@@ -1248,6 +1254,16 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		69EEFEAA1C0B00AC002BA29A /* LoginAndRegiest */ = {
+			isa = PBXGroup;
+			children = (
+				69EEFEAB1C0B00AC002BA29A /* LoginViewController.h */,
+				69EEFEAC1C0B00AC002BA29A /* LoginViewController.m */,
+				69EEFEAD1C0B00AC002BA29A /* LoginViewController.xib */,
+			);
+			path = LoginAndRegiest;
+			sourceTree = "<group>";
+		};
 		69EF0A6A1C09841300099183 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1322,6 +1338,7 @@
 				045B99681BFC2947003D6B96 /* MerchandiseControlViewController.xib in Resources */,
 				0466F4111BFC1AA3004CAFC1 /* refresh5@2x.png in Resources */,
 				0466F4C21BFC20CF004CAFC1 /* OrderFormViewController.xib in Resources */,
+				69EEFEAF1C0B00AC002BA29A /* LoginViewController.xib in Resources */,
 				69EF0A641C096E0400099183 /* BatchAlterViewController.xib in Resources */,
 				0466F40F1BFC1AA3004CAFC1 /* refresh3@2x.png in Resources */,
 				04A4FE471BFE22FE00DAAAB3 /* OrderFormTableViewCell.xib in Resources */,
@@ -1511,6 +1528,7 @@
 				0466F41F1BFC1AA3004CAFC1 /* NSDictionary+RACSequenceAdditions.m in Sources */,
 				0466F3FD1BFC1AA2004CAFC1 /* ThreadSafeMutableArry.m in Sources */,
 				0466F4421BFC1AA3004CAFC1 /* RACGroupedSignal.m in Sources */,
+				69EEFEAE1C0B00AC002BA29A /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

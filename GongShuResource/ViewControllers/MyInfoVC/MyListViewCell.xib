@@ -18,6 +18,7 @@
                         <rect key="frame" x="15" y="12" width="20" height="20"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                         <animations/>
+                        <color key="backgroundColor" red="0.83620337040000003" green="0.83620337040000003" blue="0.83620337040000003" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="配送范围" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PCi-wT-7ln">
                         <rect key="frame" x="50" y="0.0" width="79" height="43.5"/>

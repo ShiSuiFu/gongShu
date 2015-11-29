@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = YES;
+    self.tableView.bounces = NO;
     [self setTitleViewWithTitle:@"我"];
     _leftName = @[@"",@"配送范围",@"类别",@"联系方式",@"规格",@"版本升级"];
     _rightName = @[@"",@"徐汇区到浦东新区",@"饮料",@"13838380438",@"200ml",@""];
@@ -52,7 +53,8 @@
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"FirstViewCell" owner:self options:nil]lastObject];
         }
-        cell.IconImage.image = [UIImage imageNamed:@"TabBarItem_sel_3"];
+        cell.IconImage.layer.cornerRadius = 37.5;
+//        cell.IconImage.image = [UIImage imageNamed:@"TabBarItem_sel_3"];
         return cell;
     }
     static NSString *cellId = @"MyListViewCell";
@@ -60,7 +62,7 @@
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"MyListViewCell" owner:self options:nil]lastObject];
     }
-    cell.iconImage.image = [UIImage imageNamed:@"TabBarItem_sel_3"];
+//    cell.iconImage.image = [UIImage imageNamed:@"TabBarItem_sel_3"];
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

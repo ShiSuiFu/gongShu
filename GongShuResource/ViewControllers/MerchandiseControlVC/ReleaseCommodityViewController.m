@@ -30,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitleViewWithTitle:@"发布商品"];
+    
     // Do any additional setup after loading the view from its nib.
     self.leftArray = @[@"名称",@"规格",@"类目",@"商品描述",@"库存",@"价格"];
     self.rightArray = @[@"请输入商品名称",@"请输入商品规格",@"请选择商品分类",@"请输入商品描述",@"请输入库存数量",@"请输入商品价格"];
@@ -280,19 +281,34 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [view addSubview:sixTF];
     
     if ([self.pushID isEqualToString:@"详情"]) {
-        oneTF.text = self.name;
-        twoTF.text = self.size;
-        threeTF.text = self.classify;
-        fourTF.text = @"商品描述";
-        fiveTF.text = self.stock;
-        sixTF.text = self.price;
-        camera.image = self.image;
-        smallImage.hidden = YES;
-        UIImageView *waterStain = [[UIImageView alloc] initWithFrame:CGRectMake(kMainScreenWidth-55, 15, 40, 40)];
-        waterStain.image = [UIImage imageNamed:@"camera"];
-        [camera addSubview:waterStain];
-        [self.ImShelvesClick setTitle:@"保存修改" forState:UIControlStateNormal];
         [self setTitleViewWithTitle:@"修改"];
+        [self.ImShelvesClick setTitle:@"保存修改" forState:UIControlStateNormal];
+        if (self.name) {
+            oneTF.text = self.name;
+        }
+        if (self.size) {
+            twoTF.text = self.size;
+        }
+        if (self.classify) {
+            threeTF.text = self.classify;
+        }
+//        if (<#condition#>) {
+//            fourTF.text = @"商品描述";
+//        }
+        if (self.stock) {
+            fiveTF.text = self.stock;
+        }
+        if (self.price) {
+            sixTF.text = self.price;
+        }
+        
+        if (self.image) {
+            camera.image = self.image;
+            smallImage.hidden = YES;
+            UIImageView *waterStain = [[UIImageView alloc] initWithFrame:CGRectMake(kMainScreenWidth-55, 15, 40, 40)];
+            waterStain.image = [UIImage imageNamed:@"camera"];
+            [camera addSubview:waterStain];
+        }
     }
 }
 - (void)choose{

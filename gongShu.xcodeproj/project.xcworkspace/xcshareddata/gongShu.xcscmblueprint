@@ -4,10 +4,10 @@
     "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++3410+++DFF4050" : {
 
     },
-    "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++8679+++7BD6A97" : {
+    "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++8679+++4B4D752" : {
 
     },
-    "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++3410+++4B4D752" : {
+    "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++8679+++7BD6A97" : {
 
     },
     "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++8679+++047404A" : {
@@ -17,16 +17,16 @@
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "3422959983D7968B730C2378751105CC9543A043+++69919A8" : 0,
     "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++3410+++DFF4050" : 0,
+    "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++8679+++4B4D752" : 0,
     "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++8679+++7BD6A97" : 0,
-    "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++3410+++4B4D752" : 0,
     "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++8679+++047404A" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3682D5CF-75D5-48E8-9F9E-7A4C5C0008F1",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "3422959983D7968B730C2378751105CC9543A043+++69919A8" : "gongShu\/",
     "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++3410+++DFF4050" : "gongShu\/GongShuResource\/ThirdParty\/",
+    "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++8679+++4B4D752" : "gongShu\/GongShuResource\/MyTools\/",
     "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++8679+++7BD6A97" : "gongShu\/GongShuResource\/ConstantFiles\/",
-    "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++3410+++4B4D752" : "gongShu\/GongShuResource\/MyTools\/",
     "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++8679+++047404A" : "gongShu\/GongShuResource\/ConstantFiles\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "gongShu",
@@ -41,17 +41,17 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/code.taobao.org\/svn\/dashu",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++3410+++4B4D752"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/code.taobao.org\/svn\/dashu",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++3410+++DFF4050"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/code.taobao.org\/svn\/dashu",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++8679+++047404A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/code.taobao.org\/svn\/dashu",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "e3e3c0a4-e87e-4778-a13c-2cafdc3f6310++8679+++4B4D752"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/code.taobao.org\/svn\/dashu",
