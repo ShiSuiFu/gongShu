@@ -117,7 +117,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     //    CGSize imageSize = [(UIImage*)[info objectForKey:UIImagePickerControllerOriginalImage] size];
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     CGFloat cameraH = image.size.height/(image.size.width/kMainScreenWidth);
-    camera.frame = CGRectMake(0, textFTH*6+intervalH*2, kMainScreenWidth, cameraH);
+    camera.frame = CGRectMake(0, textFTH*5+intervalH*2, kMainScreenWidth, cameraH);
     camera.image = image;
     smallImage.hidden = YES;
     UIImageView *waterStain = [[UIImageView alloc] initWithFrame:CGRectMake(kMainScreenWidth-55, 15, 40, 40)];
@@ -162,7 +162,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
 //    }];
 }
 - (void)cameraView{
-    camera = [[UIImageView alloc] initWithFrame:CGRectMake(0, textFTH*6+intervalH*2, kMainScreenWidth, firstH)];
+    camera = [[UIImageView alloc] initWithFrame:CGRectMake(0, textFTH*5+intervalH*2, kMainScreenWidth, firstH)];
     camera.backgroundColor = [UIColor whiteColor];
     camera.userInteractionEnabled = YES;
     [self.scrollView addSubview:camera];
@@ -180,7 +180,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyBoard)];
     [self.scrollView addGestureRecognizer:tapGesture];
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, intervalH*1+textFTH*6)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, intervalH*1+textFTH*5)];
     view.backgroundColor = [UIColor whiteColor];
     [self.scrollView addSubview:view];
     
@@ -233,47 +233,47 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     line3.backgroundColor = RGBColor(239, 239, 239);
     [view addSubview:line3];
     
-    UILabel *four = [[UILabel alloc] initWithFrame:CGRectMake(15, textFTH*3, 100, textFTH)];
-    four.text = self.leftArray[3];
-    four.font = [UIFont systemFontOfSize:14];
-    [view addSubview:four];
-    UILabel *fourTF = [[UILabel alloc] initWithFrame:CGRectMake(115, textFTH*3, kMainScreenWidth-150, textFTH)];
-    fourTF.textAlignment = NSTextAlignmentRight;
-    fourTF.text = self.rightArray[3];
-    four.userInteractionEnabled = NO;
-    fourTF.font = [UIFont systemFontOfSize:14];
-    [view addSubview:fourTF];
-    UIImageView *rightImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(kMainScreenWidth-30, textFTH*3+10, 10, textFTH-20)];
-    rightImage1.image = [UIImage imageNamed:@"rightDetail"];
-    [view addSubview:rightImage1];
-    UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button1.frame = CGRectMake(0, textFTH*3, kMainScreenWidth, textFTH);
-    [button1 addTarget:self action:@selector(import) forControlEvents:UIControlEventTouchUpInside];
-    [view addSubview:button1];
+//    UILabel *four = [[UILabel alloc] initWithFrame:CGRectMake(15, textFTH*3, 100, textFTH)];
+//    four.text = self.leftArray[3];
+//    four.font = [UIFont systemFontOfSize:14];
+//    [view addSubview:four];
+//    UILabel *fourTF = [[UILabel alloc] initWithFrame:CGRectMake(115, textFTH*3, kMainScreenWidth-150, textFTH)];
+//    fourTF.textAlignment = NSTextAlignmentRight;
+//    fourTF.text = self.rightArray[3];
+//    four.userInteractionEnabled = NO;
+//    fourTF.font = [UIFont systemFontOfSize:14];
+//    [view addSubview:fourTF];
+//    UIImageView *rightImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(kMainScreenWidth-30, textFTH*3+10, 10, textFTH-20)];
+//    rightImage1.image = [UIImage imageNamed:@"rightDetail"];
+//    [view addSubview:rightImage1];
+//    UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
+//    button1.frame = CGRectMake(0, textFTH*3, kMainScreenWidth, textFTH);
+//    [button1 addTarget:self action:@selector(import) forControlEvents:UIControlEventTouchUpInside];
+//    [view addSubview:button1];
     
-    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(0, textFTH*4, kMainScreenWidth, intervalH)];//线3
+    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(0, textFTH*3, kMainScreenWidth, intervalH)];//线3
     lineView2.backgroundColor = RGBColor(239, 239, 239);
     [view addSubview:lineView2];
     
-    UILabel *five = [[UILabel alloc] initWithFrame:CGRectMake(15, intervalH*1+textFTH*4, 100, textFTH)];
+    UILabel *five = [[UILabel alloc] initWithFrame:CGRectMake(15, intervalH*1+textFTH*3, 100, textFTH)];
     five.text = self.leftArray[4];
     five.font = [UIFont systemFontOfSize:14];
     [view addSubview:five];
-    UITextField *fiveTF = [[UITextField alloc] initWithFrame:CGRectMake(115, intervalH*1+textFTH*4, kMainScreenWidth-130, textFTH)];
+    UITextField *fiveTF = [[UITextField alloc] initWithFrame:CGRectMake(115, intervalH*1+textFTH*3, kMainScreenWidth-130, textFTH)];
     fiveTF.textAlignment = NSTextAlignmentRight;
     fiveTF.placeholder = self.rightArray[4];
     fiveTF.font = [UIFont systemFontOfSize:14];
     fiveTF.borderStyle = UITextBorderStyleNone;
     [view addSubview:fiveTF];
-    UIView *line4 = [[UIView alloc] initWithFrame:CGRectMake(0, intervalH*1+textFTH*5, kMainScreenWidth, 1)];//线3
+    UIView *line4 = [[UIView alloc] initWithFrame:CGRectMake(0, intervalH*1+textFTH*4, kMainScreenWidth, 1)];//线3
     line4.backgroundColor = RGBColor(239, 239, 239);
     [view addSubview:line4];
     
-    UILabel *six = [[UILabel alloc] initWithFrame:CGRectMake(15, intervalH*1+textFTH*5, 100, textFTH)];
+    UILabel *six = [[UILabel alloc] initWithFrame:CGRectMake(15, intervalH*1+textFTH*4, 100, textFTH)];
     six.text = self.leftArray[5];
     six.font = [UIFont systemFontOfSize:14];
     [view addSubview:six];
-    UITextField *sixTF = [[UITextField alloc] initWithFrame:CGRectMake(115, intervalH*1+textFTH*5, kMainScreenWidth-130, textFTH)];
+    UITextField *sixTF = [[UITextField alloc] initWithFrame:CGRectMake(115, intervalH*1+textFTH*4, kMainScreenWidth-130, textFTH)];
     sixTF.textAlignment = NSTextAlignmentRight;
     sixTF.placeholder = self.rightArray[5];
     sixTF.font = [UIFont systemFontOfSize:14];
